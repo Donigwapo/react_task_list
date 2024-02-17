@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 const TaskForm = () => {
   const [taskname, setTaskname] = useState('');
   const [taskdescription, setTaskdescription] = useState('');
@@ -105,11 +106,11 @@ const TaskForm = () => {
       
       <div class="navbar">
             
-      <button onClick={() => handleUpdateTask(task)}>Add to do list </button>
-      </div>
+    
+     
+
       
-      
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="newTaskForm">
         <div>
           <label>Task Name:</label>
           <input
@@ -126,9 +127,10 @@ const TaskForm = () => {
             onChange={(e) => setTaskdescription(e.target.value)}
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className='SbuttonSubmit'>Submit</button>
         {successMessage && <div>{successMessage}</div>}
       </form>
+      </div>
       <button onClick={handleShowTasks}>Refresh Tasks</button>
       {showModal && (
         <div className="modal" style={{display: showModal ? 'block' : 'none'}}>
@@ -166,7 +168,7 @@ const TaskForm = () => {
               </div>
               <button type="submit">Update</button>
             </form>
-            <button onClick={() => handleDeleteTask(selectedTask)}>Delete</button>
+       
           </div>
         </div>
       )}
