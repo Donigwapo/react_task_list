@@ -104,10 +104,10 @@ const TaskForm = () => {
     <div>
       
       <div class="navbar">
-          
-           <p>Todo-List-App</p>
+            
+      <button onClick={() => handleUpdateTask(task)}>Add to do list </button>
       </div>
-
+      
       
       <form onSubmit={handleSubmit}>
         <div>
@@ -131,7 +131,7 @@ const TaskForm = () => {
       </form>
       <button onClick={handleShowTasks}>Refresh Tasks</button>
       {showModal && (
-        <div className="modal">
+        <div className="modal" style={{display: showModal ? 'block' : 'none'}}>
           <div className="modal-content">
             <span className="close" onClick={toggleModal}>&times;</span>
             <h2>Update Task</h2>
