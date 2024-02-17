@@ -12,7 +12,7 @@ const TaskForm = () => {
     e.preventDefault();
     
     try {
-      const response = await fetch('http://localhost:3000/api/v1/tasklist', {
+      const response = await fetch('https://task-list-db.onrender.com/api/v1/tasklist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ const TaskForm = () => {
   
   const handleShowTasks = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/v1/tasklist');
+      const response = await fetch('https://task-list-db.onrender.com/api/v1/tasklist');
       const responseData = await response.json();
       if (Array.isArray(responseData.data)) {
         console.log('Tasks from API:', responseData.data);
@@ -63,7 +63,7 @@ const TaskForm = () => {
 
 
         try {
-            const response = await fetch(`http://localhost:3000/api/v1/tasklist/${selectedTask.id}`, {
+            const response = await fetch(`https://task-list-db.onrender.com/api/v1/tasklist/${selectedTask.id}`, {
               method: 'PUT',
               headers: {
                 'Content-Type': 'application/json'
@@ -85,7 +85,7 @@ const TaskForm = () => {
 
   const handleDeleteTask = async (task) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/v1/tasklist/${task.id}`, {
+      const response = await fetch(`https://task-list-db.onrender.com/api/v1/tasklist/${task.id}`, {
         method: 'DELETE'
       });
 
