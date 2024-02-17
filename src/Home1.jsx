@@ -102,6 +102,13 @@ const TaskForm = () => {
 
   return (
     <div>
+      
+      <div class="navbar">
+          
+           <p>Todo-List-App</p>
+      </div>
+
+      
       <form onSubmit={handleSubmit}>
         <div>
           <label>Task Name:</label>
